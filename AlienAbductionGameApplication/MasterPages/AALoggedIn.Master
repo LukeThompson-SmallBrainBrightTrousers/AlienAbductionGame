@@ -1,0 +1,146 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AALoggedIn.master.vb" Inherits="AlienAbductionGameApplication.AALoggedIn" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">        
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" /> 
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Combo|Comfortaa')" /> 
+    <link type="text/css" rel="stylesheet" href="~/css/standard-master-layout.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/style.css" /> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <%--Framework scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <section class="profile-bar">
+            <img src="/images/template/header/profileBar.png" />
+            <div class="username">
+                <strong>Lead Crabstick #</strong>2
+            </div>
+            <div class="location">
+                <strong>Location:</strong>
+            </div>
+            <div class="fuel">
+                <strong>Fuel:</strong> 25/160L
+            </div>
+        </section>
+        <!-- /profile bar -->
+
+        <!-- start of header -->
+        <section class="header-wrapper">
+            <div id="header-sky" class="header-container"></div>
+            <div id="header-middle-layer" class="headercontainer">
+                <div id="header-timer"></div>
+            </div>
+            <div id="header-background" class="header-container">
+                <img src="/images/template/backgrounds/panel.png" />
+            </div>
+            <div id="header-content" class="header-container">
+                <div id="header-user-info" class="header-icon">
+                    <div class="header-ui-top" id="header-kremeggs">
+                        <div class="header-ui-title">
+                            <div class="header-ui-image">
+                                <img src="images/template/header/kremeggIcon.png" />
+                            </div>
+                            <div class="header-ui-text">
+                                Kremeggs
+                            </div>
+                        </div>
+                        <div class="header-ui-data kremeggs">
+                            24
+                        </div>
+                    </div>
+                    <div class="header-ui-top" id="header-bunga">
+                        <div class="header-ui-title">
+                            <div class="header-ui-image">
+                                <img src="images/template/header/bungaIcon.png" />
+                            </div>
+                            <div class="header-ui-text">
+                                <p>Bunga</p>
+                            </div>
+                        </div>
+                        <div class="header-ui-data bunga">
+                            234
+                        </div>
+                    </div>
+                    <div class="header-ui-bottom" id="header-orbs">
+                        <div class="header-ui-title">
+                            <div class="header-ui-image">
+                                <img src="images/template/header/orbsIcons/piroOrb.png" />
+                            </div>
+                            <div class="header-ui-text">
+                                <p>Orbs</p>
+                            </div>
+                        </div>
+                        <div class="header-ui-data">
+                            test
+                        </div>
+                    </div>
+                </div>
+                <div id="header-launch" class="header-icon header-swf-false swf-placeholder">
+                </div>
+                <div id="header-logo" class="header-icon">
+                    <a href="camp"></a>
+                </div>
+                <div id="Div1" class="header-icon header-launch-icon">
+                    <a href="javascript:void(0);" class="header-launch-false"></a>
+                </div>
+                <div id="header-shield" class="header-icon">
+                    <img id="img-shield" src="images/template/header/shields/1.png" alt="Rank Level" />
+                </div>
+                <div id="header-payments" class="header-icon">
+                    <div class="header-payment-section" id="header-buy">
+                        <a href="javascript:void(0);"></a>
+                    </div>
+                    <div class="header-payment-section" id="header-earn">
+                        <a href="javascript:void(0);"></a>
+                    </div>
+                </div>
+                <nav class="nav-wrapper">
+                    <ul class="header-nav">
+                        <li id="nav-camp" class="active"><a href="camp">Camp</a></li>
+                        <li id="nav-spaceship" class="active"><a href="spaceship">Spaceship</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!--/header -->
+
+        <!-- start of main-wrapper -->
+        <section class="main-wrapper">
+            <asp:ContentPlaceHolder runat="server" ID="mainBody" >
+
+            </asp:ContentPlaceHolder>
+        </section>
+        <!--/main-wrapper -->
+
+        <!-- start of footer-wrapper -->
+        <footer class="footer-wrapper">
+        </footer>
+        <!--/footer -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AlienAbductionGameApplication", "AlienAbductionGameApplication\AlienAbductionGameApplication.vbproj", "{C8EB0E0E-528B-4374-990F-AB418481933C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AlienAbductionGameUnitTest", "AlienAbductionGameUnitTest\AlienAbductionGameUnitTest.vbproj", "{92150674-7C6B-4396-A013-4F7C91B4ECF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8EB0E0E-528B-4374-990F-AB418481933C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EB0E0E-528B-4374-990F-AB418481933C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EB0E0E-528B-4374-990F-AB418481933C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EB0E0E-528B-4374-990F-AB418481933C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92150674-7C6B-4396-A013-4F7C91B4ECF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92150674-7C6B-4396-A013-4F7C91B4ECF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92150674-7C6B-4396-A013-4F7C91B4ECF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92150674-7C6B-4396-A013-4F7C91B4ECF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
