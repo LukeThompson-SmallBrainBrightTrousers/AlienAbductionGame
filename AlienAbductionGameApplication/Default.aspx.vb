@@ -5,14 +5,14 @@
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim client As New Dataservice.AlienAbductionGameServiceClient
-        Dim returnString As String
+    'Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    '    Dim client As New Dataservice.AlienAbductionGameServiceClient
+    '    Dim returnString As String
 
-        returnString = client.GetData(TextBox1.Text)
-        Label1.Text = returnString
+    '    returnString = client.GetData(TextBox1.Text)
+    '    Label1.Text = returnString
 
-        client.Close()
-    End Sub
+    '    client.Close()
+    'End Sub
 
 End Class

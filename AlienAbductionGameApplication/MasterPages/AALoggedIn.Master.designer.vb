@@ -50,6 +50,15 @@ Partial Public Class AALoggedIn
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
+    '''launchFlash control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents launchFlash As Global.AlienAbductionGameApplication.Controls.Common.SWFObject
+
+    '''<summary>
     '''mainBody control.
     '''</summary>
     '''<remarks>
@@ -57,4 +66,22 @@ Partial Public Class AALoggedIn
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents mainBody As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''footerFlash control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents footerFlash As Global.AlienAbductionGameApplication.Controls.Common.SWFObject
+
+    '''<summary>
+    '''googleAnayltics control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents googleAnayltics As Global.AlienAbductionGameApplication.GoogleAnalytics
 End Class

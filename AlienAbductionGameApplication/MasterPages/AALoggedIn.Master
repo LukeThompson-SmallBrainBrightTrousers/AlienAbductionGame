@@ -1,21 +1,26 @@
 ﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AALoggedIn.master.vb" Inherits="AlienAbductionGameApplication.AALoggedIn" %>
 
+<%@ Register Src="~/Controls/Common/SWFObject.ascx" TagPrefix="uc" TagName="FlashObject" %>
+<%@ Register Src="~/Controls/Google/GoogleAnalytics.ascx" TagPrefix="uc" TagName="googleAnalytics" %>
+
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <title></title>
-    <asp:PlaceHolder ID="PlaceHolder1" runat="server">        
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" /> 
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Combo|Comfortaa')" /> 
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Combo|Comfortaa')" />
     <link type="text/css" rel="stylesheet" href="~/css/standard-master-layout.css" />
-    <link type="text/css" rel="stylesheet" href="~/css/style.css" /> 
+    <link type="text/css" rel="stylesheet" href="~/css/style.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <div id="timer" style="display: none;"></div>
+    <div id="javaDebug"></div>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Scripts>
@@ -32,9 +37,48 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Path="~/Scripts/jquery.countdown.js" />
                 <%--Site scripts--%>
             </Scripts>
         </asp:ScriptManager>
+
+        <script>
+            $(document).ready(function () {
+                var nextLaunch = new Date("01-10-2013 22:00:00");
+                $('#timer').countdown({ whichLabels: null, until: nextLaunch, onTick: countdownTick, onExpiry: timerComplete, alwaysExpire: true, format: 'S' });
+            });
+
+            var minutes = null;
+            var seconds = null;
+
+            function timerComplete() {
+                var launchButton = $('#header-launch');
+                launchButton.removeClass('header-swf-false');
+                launchButton.addClass('header-swf-true');
+            }
+
+            function countdownTick() {
+
+                //caluculate percentage of 15mins
+                //each launch is 15mins
+
+                var time_Array = $('#timer').countdown('getTimes', { format: 'S', compact: true });
+                seconds = time_Array[6];
+
+                var finalValue = 148;
+
+                var maxSeconds = 900; //15 mins
+                var secondsPercentage = (seconds / maxSeconds) * 100;
+                var topValue = ((140 / 100) * (100 - secondsPercentage));
+
+                var top = finalValue - topValue
+                var newTop = top + "px";
+
+                $("#header-timer").css("top", newTop)
+
+            }
+        </script>
+
         <section class="profile-bar">
             <img src="/images/template/header/profileBar.png" />
             <div class="username">
@@ -101,11 +145,12 @@
                     </div>
                 </div>
                 <div id="header-launch" class="header-icon header-swf-false swf-placeholder">
+                    <uc:FlashObject runat="server" ID="launchFlash" swfFileLocation="\images\template\header\launchButton\swf\buttonReady.swf" width="112" height="112" />
                 </div>
                 <div id="header-logo" class="header-icon">
                     <a href="camp"></a>
                 </div>
-                <div id="Div1" class="header-icon header-launch-icon">
+                <div id="header-launch" class="header-icon header-launch-icon">
                     <a href="javascript:void(0);" class="header-launch-false"></a>
                 </div>
                 <div id="header-shield" class="header-icon">
@@ -131,16 +176,17 @@
 
         <!-- start of main-wrapper -->
         <section class="main-wrapper">
-            <asp:ContentPlaceHolder runat="server" ID="mainBody" >
-
+            <asp:ContentPlaceHolder runat="server" ID="mainBody">
             </asp:ContentPlaceHolder>
         </section>
         <!--/main-wrapper -->
 
         <!-- start of footer-wrapper -->
         <footer class="footer-wrapper">
+            <uc:FlashObject ID="footerFlash" runat="server" height="240" width="800" />
         </footer>
         <!--/footer -->
+        <uc:googleAnalytics runat="server" ID="googleAnayltics" />
     </form>
 </body>
 </html>
